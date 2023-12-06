@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div  class="container mt-2">
+    <input  class="search m-2" type="search" value="searchtext" placeholder="search Name.." [(ngModel)]="searchtext">
+   <button (click)="addevent()" style="float: right;" class="m-2 btn btn-primary">ADD EVENT</button>
+    <table class="mt-2 table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>startDate</th>
+                <th>endDate</th>
+                <th>status</th>
+                <th>eventUrl</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of eventdata| search:searchtext;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.startdate |date:'shortDate'}}</td>
+                <td>{{item.enddate | date:'shortDate'}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.eventurl}}</td>
+                <td><span (click)="edit(item._id)" class="edit material-icons m-3">edit</span>
+                <span (click)="delete(item._id)"  class="delete material-icons m-3">delete</span></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+

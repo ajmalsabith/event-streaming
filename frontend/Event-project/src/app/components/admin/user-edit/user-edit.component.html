@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="containerrr">
+       
+    <div class="formmodel">
+        <h3 class="mt-2 mb-2" style="text-align: center;color: rgb(50, 165, 42);font-weight: bold;">EDIT USER</h3>
+        <form [formGroup]="editregisterform" (submit)="submit()">
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+                <input type="text" class="form-control" formControlName="name"  value="{{username}}" aria-label="Username" >
+            </div>  
+            <span style="color: red;" *ngIf="name && name.invalid && name.touched">please correct your name</span><br>
+            <div class="input-group mt-2">
+                <span class="input-group-text" id="basic-addon1">phone</span>
+                <input type="number" class="form-control" formControlName="phone" value="{{userphone}}"   aria-label="Username" >
+            </div>   
+            <span style="color: red;" *ngIf="phone && phone.invalid && phone.touched">please correct your name</span><br>
+            <div class="input-group  mt-2">
+                <span class="input-group-text" id="basic-addon1">email</span>
+                <input type="email" class="form-control"formControlName="email"  value="{{useremail}}"  aria-label="Username" >
+            </div> 
+            <span style="color: red;" *ngIf="email && email.invalid && email.touched">please correct your email</span><br>
+            <div class="input-group  mt-2">
+                <span class="input-group-text" id="basic-addon1">Password</span>
+                <input type="password" class="form-control" formControlName="password"  value="{{userpassword}}" aria-label="Username" >
+            </div>     
+            <span style="color: red;" *ngIf="password && password.invalid && password.touched">please correct your password</span><br>
+            <div class="input-group  mt-2">
+                <span class="input-group-text" id="basic-addon1">is_verified</span>
+                <input type="text" class="form-control" formControlName="is_verified"  value="{{useris_verified}}" aria-label="Username" >
+            </div>     
+            <span style="color: red;" *ngIf="is_verified && is_verified.invalid && is_verified.touched">please correct your password</span><br>
+            <button [disabled]="editregisterform.invalid" class="btn btn-success mt-2">EDIT USER</button>     
+        </form>
+
+    </div>
+
+</div>
+
+

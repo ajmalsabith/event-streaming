@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div  class="container">
+    <div>
+       <input  class="search m-4" type="search" value="searchval" placeholder="search Event Name.." [(ngModel)]="searchval">
+       <div style="float: right;" class="dropdown m-4">
+        <a class="btn btn-info dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter Event
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" (click)="statusfil('ongoing')" >Ongoing</a></li>
+          <li><a class="dropdown-item"  (click)="statusfil('upcoming')"  >Upcoming</a></li>
+          <li><a class="dropdown-item"  (click)="statusfil('completed')"  >Completed</a></li>
+          <li><a class="dropdown-item"  (click)="statusfil('all')"  >all</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr style="color: brown;">
+    <div class="row">
+        <div class="col-md-3 mt-3" *ngFor="let item of (eventdata| search:searchval | filter :status) ">
+            <div class="card" style="width: 18rem;">
+                <img src="https://us.123rf.com/450wm/denayunebgt/denayunebgt2210/denayunebgt221000133/192257311-event-planner-template-hand-drawn-cartoon-flat-illustration-with-planning-schedule-time-management.jpg?ver=6" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+            
+                    <p *ngIf="item.status=='upcoming'" class="card-text">
+                        <span class="material-icons" style="color: green; vertical-align: middle;">
+                            upcoming
+                        </span>
+                        {{item.status}} Event
+                    </p>
+        
+                    <p *ngIf="item.status=='ongoing'" class="card-text">
+                        <span class="material-icons" style="color: blue; vertical-align: middle;">
+                            schedule
+                        </span>
+                        {{item.status}} Event
+                    </p>
+            
+                 
+                    <p *ngIf="item.status=='completed'" class="card-text">
+                        <span class="material-icons" style="color: red; vertical-align: middle;">
+                            done
+                        </span>
+                        {{item.status}} Event
+                    </p>
+                   <div class="containers mt-2"><span style="color: brown;" class="material-icons m-1">
+                    alarm
+                    </span><span style="font-weight: bolder;">{{item.startdate | date:'shortDate'}} to {{item.enddate | date:'shortDate'}}</span></div>
+                    <a *ngIf="item.status!='upcoming'" (click)="isvideoshow(item.eventurl)"  class="btn btn-primary mt-3">Go To Watch</a>
+                    <a *ngIf="item.status=='upcoming'" (click)="toastupcoming()"  class="btn btn-primary mt-3">Go To Watch</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

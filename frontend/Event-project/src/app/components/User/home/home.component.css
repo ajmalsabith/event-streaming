@@ -1,0 +1,22 @@
+.containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:auto;height: auto;
+     border-radius: 5px;
+     border: 1px solid black;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.615);
+}
+.card{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.615);
+}
+
+.search{
+    border: 2px solid rgb(62, 11, 11);
+    border-radius: 6px;
+    color:black;
+  }
+
+
+ 
+ 

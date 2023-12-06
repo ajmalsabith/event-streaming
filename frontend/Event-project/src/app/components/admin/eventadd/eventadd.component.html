@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="formmodel">
+        <h3>ADD EVENT</h3>
+        <form [formGroup]="eventform" (submit)="submit()">
+            <div class="row">
+                <div class="col-md-6" >
+                    <input type="text" id="eventName" formControlName="eventname" placeholder="Enter event name...">
+                    <label  for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" formControlName="startdate">
+                    <button class="btn btn-success mt-2">ADD EVENT</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="url" id="eventUrl" formControlName="eventurl" placeholder="Enter event URL...">
+
+                 
+                    <label for="endDate">End Date:</label>
+                    <input type="date" formControlName="enddate" id="endDate">
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

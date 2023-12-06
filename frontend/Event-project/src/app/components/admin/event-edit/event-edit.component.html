@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="formmodel">
+        <h3>EDIT EVENT</h3>
+        <div class="mt-2">
+            <select [(ngModel)]="newid" >
+                <option value="null">select status</option>
+                <option value="ongoing">ongoing</option>
+                <option value="upcoming">upcoming</option>
+                <option value="completed">completed</option>
+            </select>
+        </div>
+        <form [formGroup]="eventform" (submit)="submit()">
+            <div class="row">
+                <div class="col-md-6" >
+                    <input type="text" id="eventName" formControlName="eventname" value="{{name}}" >
+                    <label  for="startDate">Start Date:{{start | date:'shortDate'}}</label>
+                    <input type="date" id="startDate"  formControlName="startdate">
+                    <button class="btn btn-success mt-2">EDIT EVENT</button>
+                </div>
+                <div class="col-md-6">
+                    <input type="url" id="eventUrl" formControlName="eventurl" value="{{url}}" >
+                    <label for="endDate">End Date:{{end | date:'shortDate'}}</label>
+                    <input type="date" formControlName="enddate"  id="endDate">
+                </div>
+            </div>    
+        </form>
+        
+       
+    </div>
+
+</div>

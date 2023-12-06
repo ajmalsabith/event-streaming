@@ -1,0 +1,75 @@
+
+<div  *ngIf="!isShow" class="overlay">
+
+    
+    <div class="containerrr">
+       
+        <div class="formmodel">
+            <h3 class="mt-2 mb-2" style="text-align: center;color: rgb(42, 42, 165);font-weight: bold;">ADD USER</h3>
+            <form [formGroup]="registerform" (submit)="submit()">
+                <div class="input-group mt-4">
+                    <span class="input-group-text" id="basic-addon1">Name</span>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>    
+                <span style="color: red;" *ngIf="name && name.invalid && name.touched">please correct your name</span><br>
+                <div class="input-group  mt-2">
+                    <span class="input-group-text" id="basic-addon1">Phone</span>
+                    <input type="number" class="form-control"formControlName="phone" placeholder="phone number" aria-label="Username" aria-describedby="basic-addon1">
+                </div>    
+                <span style="color: red;" *ngIf="phone && phone.invalid && phone.touched">please correct your phone</span><br>
+                <div class="input-group mt-2">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input type="email" class="form-control" formControlName="email" placeholder="example@gmail.com" aria-label="Username" aria-describedby="basic-addon1">
+                </div>    
+                <span style="color: red;" *ngIf="email && email.invalid && email.touched">please correct your email</span><br>
+                <div class="input-group  mt-2">
+                    <span class="input-group-text" id="basic-addon1">Password</span>
+                    <input type="password" class="form-control" formControlName="password" placeholder="@password" aria-label="Username" aria-describedby="basic-addon1">
+                </div>     
+                <span style="color: red;" *ngIf="password && password.invalid && password.touched">please correct your password</span><br>
+                <button [disabled]="registerform.invalid" class="btn btn-success mt-2">ADD USER</button>     
+                <button (click)="isShow=true" style="float: right;color: rgb(248, 248, 248);" class="btn btn-warning mt-2">CLOSE</button>     
+            </form>
+    
+        </div>
+    
+    </div>
+    
+</div>
+    
+<div >
+    <app-navbar></app-navbar>
+<div  class="container mt-2">
+    <input  class="search m-2" type="search" value="searchval" placeholder="search Name.." [(ngModel)]="searchtext">
+   <button (click)="adduser()" style="float: right;" class="m-2 btn btn-info">ADD USER</button>
+    <table class="mt-2 table table-striped table-bordered">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>phone</th>
+                <th>email</th>
+                <th>password</th>
+                <th>is_verified</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of userdata |search :searchval;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.password}}</td>
+                <td>{{item.is_verified}}</td>
+                <td><span (click)="edit(item.email)" class="edit material-icons m-3">edit</span>
+                <span (click)="delete(item.email)"  class="delete material-icons m-3">delete</span></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+</div>

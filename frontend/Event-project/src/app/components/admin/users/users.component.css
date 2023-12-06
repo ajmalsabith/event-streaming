@@ -1,0 +1,57 @@
+.edit{
+    color: green;
+}
+.delete{
+    color: red;
+}
+
+.search{
+    border: 2px solid rgb(62, 11, 11);
+    border-radius: 6px;
+    color:black;
+  }
+
+.containerrr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.formmodel{
+    width: 350px;
+    height: 420px;
+    position: fixed;
+    padding: 22px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.563);
+
+}
+
+h3 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.666);
+}
+
+a{
+    text-decoration: none;
+}
+.input-group-text{
+    width: 85px;
+}
+
+.alighg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color:rgba(0, 0, 0, 0.763)
+}
+

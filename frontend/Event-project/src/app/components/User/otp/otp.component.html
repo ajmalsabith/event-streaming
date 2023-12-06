@@ -1,0 +1,19 @@
+<div class="alighg">
+    <a class="navbar-brand" href="#">
+        <img src="assets/events-removebg-preview.png" alt="" width="350" height="200" class="d-inline-block align-text-top">
+    </a>
+</div>
+
+<div class="container">
+    <div class="formmodel">
+        <h3 class="mt-1 mb-1" style="text-align: center;color: brown;font-weight: bold;">OTP</h3>
+            <div class="input-group mt-2">
+                <span class="input-group-text" id="basic-addon1">otp</span>
+                <input type="text" class="form-control" [(ngModel)]="inputval"  placeholder="enter otp" aria-label="otp" aria-describedby="basic-addon1">
+            </div>    
+            <span style="color: red;">{{message}}</span><br>
+            <button (click)="submit()" class="mt-1 btn btn-info">SUBMIT</button>
+
+    </div>
+
+</div>

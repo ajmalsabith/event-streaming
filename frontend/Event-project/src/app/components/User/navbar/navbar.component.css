@@ -1,0 +1,22 @@
+.navbar-nav{
+    margin-left: 40px;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: brown;
+}
+
+
+@media (max-width: 994px) {
+    .ogbut{
+        display: none;
+    }
+}
+@media (min-width: 994px) {
+    .navbut{
+        display: none;
+    }
+}
+

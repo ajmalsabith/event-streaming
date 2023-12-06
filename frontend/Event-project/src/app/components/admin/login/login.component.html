@@ -1,0 +1,27 @@
+<div class="alighg">
+    <a class="navbar-brand" href="#">
+        <img src="assets/events-removebg-preview.png" alt="" width="350" height="200" class="d-inline-block align-text-top">
+    </a>
+</div>
+
+<div class="container">
+   
+    <div class="formmodel">
+        <h3 class="mt-2 mb-4" style="text-align: center;color: rgb(42, 144, 165);font-weight: bold;">ADMIN SIGN IN</h3>
+        <form [formGroup]="loginform" (submit)="submit()">
+            <div class="input-group mt-2">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <input type="email" class="form-control" formControlName="email" placeholder="example@gmail.com" aria-label="Username" aria-describedby="basic-addon1">
+            </div>    
+            <span style="color: red;" *ngIf="email && email.invalid && email.touched">please correct your email</span><br>
+            <div class="input-group  mt-2">
+                <span class="input-group-text" id="basic-addon1">Password</span>
+                <input type="password" class="form-control" formControlName="password" placeholder="@password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>     
+            <span style="color: red;" *ngIf="password && password.invalid && password.touched">please correct your password</span><br>
+            <button [disabled]="loginform.invalid" class="btn btn-dark mt-2">LOGIN</button>     
+        </form>
+
+    </div>
+
+</div>
