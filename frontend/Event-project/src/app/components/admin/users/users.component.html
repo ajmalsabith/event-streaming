@@ -41,7 +41,7 @@
     <app-navbar></app-navbar>
 <div  class="container mt-2">
     <input  class="search m-2" type="search" value="searchval" placeholder="search Name.." [(ngModel)]="searchtext">
-   <button (click)="adduser()" style="float: right;" class="m-2 btn btn-info">ADD USER</button>
+   <button (click)="adduser()" style="float: right;" class="m-2 btn btn-primary">ADD USER</button>
     <table class="mt-2 table table-striped table-bordered">
 
         <thead>
@@ -56,7 +56,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of userdata |search :searchval;let i=index">
+            <tr *ngFor="let item of userdata |search :searchtext;let i=index">
                 <td>{{i+1}}</td>
                 <td>{{item.name}}</td>
                 <td>{{item.phone}}</td>
